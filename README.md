@@ -28,6 +28,20 @@ Week 2 introduces the fundamentals of image processing. The focus is on understa
 
 Week 3 focuses on converting image data into structured numerical representations suitable for machine learning. Feature extraction techniques such as Histogram of Oriented Gradients (HOG), HSV color features, and Local Binary Patterns (LBP) are explored, along with edge detection methods and basic texture statistics. Images are divided into 8×8 grids, and features are computed per cell and stored in CSV format. By the end of the week, a complete feature dataset is generated, ready for downstream machine learning tasks.
 
+## Week 4 – Machine Learning Model Training
+
+In this phase, hand-crafted features extracted from image grid cells were used to train classical machine learning models for wildlife detection. Supervised learning algorithms including Support Vector Machine (SVM) and Random Forest were trained and evaluated using standard classification metrics such as accuracy, precision, recall, and F1-score. The best-performing model was selected and saved using pickle for later inference.
+
+## Week 5 – Inference and Output Generation
+
+The trained model was applied to unseen images to perform region-level wildlife detection. Each image was divided into an 8×8 grid, and predictions were generated for all 64 grid cells. Cells predicted to contain wildlife were visually highlighted on the image. A final CSV file was generated for all processed images in the format:
+ImageFileName, c01, c02, ..., c64
+where each cell value indicates the presence or absence of wildlife.
+
+## Repository Notes
+
+Due to size constraints, raw images, processed images, and visual output images are not included in the repository. The repository contains all source code and CSV outputs required to reproduce the complete pipeline locally.
+
 ## Methodology
 
 The project follows a bottom-up technical approach, beginning with programming and data handling, progressing to image representation and manipulation, and finally transforming visual information into numerical feature vectors. This staged methodology ensures interpretability, modularity, and scalability of the overall pipeline.
